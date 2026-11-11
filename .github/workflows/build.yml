@@ -42,11 +42,11 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v4
 
-      - name: Build F-Droid Release APK
-        run: chmod +x ./gradlew && ./gradlew assembleFdroidRelease
+      - name: Build F-Droid Debug APK
+        run: chmod +x ./gradlew && ./gradlew assembleFdroidDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: orangeisland-fdroid-release
-          path: app/build/outputs/apk/fdroid/release/*.apk
+          name: orangeisland-fdroid-debug
+          path: app/build/outputs/apk/fdroid/debug/*.apk
